@@ -34,7 +34,7 @@ void solve(){
                 maxi=max(maxi,t);
             }
         }
-        return maxi;
+        
 }
 
 int main(){
