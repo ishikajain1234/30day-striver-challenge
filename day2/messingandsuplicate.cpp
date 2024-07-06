@@ -16,16 +16,22 @@ using namespace std;
 #define sort(v) sort(v.begin(),v.end());
 #define MOD 100000007;
 
-void solve(){
-    
-}
-
-int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    int t;
-    cin>>t;
-    while(t--){
-        solve();
+vector<int> Solution::repeatedNumber(const vector<int> &A) {
+    int n1=A.size();
+    long long s1=(n1*(n1+1))/2;
+    long long s2=(n1*(n1+1)*(2*n1+1))/6;
+    long long s=0;
+    long long s3=0;
+    for(int i=0; i<n1; i++){
+        s+=(long long)A[i];
+        s3+=((long long)A[i]*(long long)A[i]);
     }
+    long long val1=s-s1;
+    long long val2=s3-s2;
+    val2=val2/val1;
+    long long y=0;
+    long long x=0;
+    x=(val1+val2)/2;
+    y=x-val1;
+    return {(int)x,(int)y};
 }
